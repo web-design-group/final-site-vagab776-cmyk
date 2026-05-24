@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Косэцу — Новости</title>
+    <link rel="stylesheet" href="news.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-grid">
+            <div class="nav-left">
+                <img src="images/header-logo.png" alt="Логотип Косэцу" class="logo">
+                <div class="nav-links">
+                    <span>Акции</span>
+                    <span>Распродажа</span>
+                    <span>Избранное</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <img src="images/user-icon.png" alt="Личный кабинет">
+            <a href="index.html">
+  <img src="images/home-icon.png" alt="Главная">
+</a>
+                <img src="images/cart-icon.png" alt="Корзина">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section container">
+            <div class="hero-grid">
+                <img src="images/red-logo.png" alt="Красный логотип" class="hero-logo">
+                <div class="hero-card">
+                    <div class="hero-badge">Новости</div>
+                    <h1>Работа мангаки, мечта или рабство</h1>
+                    <p>Мир манги и аниме</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Жизнь мангаки и исследование профессии</h3>
+                    <p>Мангака – это художник и сценарист комиксов в японском стиле. Работа мангаки сложна и требует полной самоотдачи, а путь к успеху может занять многие годы.</p>
+                    <a href="#" class="read-more">Продолжение →</a>
+                </div>
+                <div class="info-item">
+                    <h3>Трудности и особенности работы в индустрии манги и аниме</h3>
+                    <p>Работа мангаки часто связана с жёсткими сроками и большими объёмами. Многие работают в режиме постоянного цейтнота, жертвуя сном и личной жизнью ради выхода новых глав.</p>
+                    <a href="#" class="read-more">Продолжение →</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="dots container">
+            <h3>События прошлых дней</h3>
+            <div class="dot-row" id="dotRow">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+            </div>
+        </div>
+
+        <div class="events-carousel">
+            <div class="events-wrapper" id="eventsWrapper">
+                <!-- Слайд 1 -->
+                <div class="event-slide dark">
+                    <div class="container event-grid">
+                        <div class="event-text">
+                            <h2>Встреча фанатов Евангелион</h2>
+                            <p>В декабре у нас проходит встреча любителей культового аниме «Евангелион». Скорей регистрируйся и погрузись в атмосферу невероятного мира.</p>
+                            <p class="event-call">По поводу регистрации жмите на кнопку ниже и удачи!</p>
+                            <a href="#" class="event-btn">Регистрация на мероприятие →</a>
+                        </div>
+                        <img src="images/event-eva.png" alt="Евангелион" class="event-img">
+                    </div>
+                </div>
+                <!-- Слайд 2 -->
+                <div class="event-slide">
+                    <div class="container event-grid reverse">
+                        <img src="images/event-exhibition.png" alt="Выставка" class="event-img">
+                        <div class="event-text">
+                            <h2>Выставка работ молодых авторов</h2>
+                            <p>Являясь всего лишь частью общей картины, активно развивающиеся страны третьего мира могут быть обнародованы.</p>
+                            <p class="event-call">Регистрируйся для участия, раскрой свой талант и покажи его миру</p>
+                            <a href="#" class="event-btn">Регистрация на выставку →</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Слайд 3 -->
+                <div class="event-slide">
+                    <div class="container event-grid">
+                        <div class="event-text">
+                            <h2>Уроки создания манги</h2>
+                            <p>Мастер-классы по созданию манги от профессиональных художников. Научитесь рисовать персонажей, создавать сценарии и работать с тушами. Расписание на сайте.</p>
+                            <a href="#" class="event-btn">Записаться на уроки →</a>
+                        </div>
+                        <img src="images/event-manga-class.png" alt="Уроки манги" class="event-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div><strong>+1 234 56 78 90</strong></div>
+                    <div class="footer-link">Вопросы и ответы</div>
+                    <div class="footer-link">Поучаствовать в интервью ★</div>
+                    <div class="social-icons">
+                        <img src="images/telegram.png" alt="Telegram" class="social-icon">
+                        <img src="images/vk.png" alt="ВКонтакте" class="social-icon">
+                    </div>
+                    <div class="footer-support">Поддержка</div>
+                    <div class="footer-copy">© 2026, Косэцу</div>
+                </div>
+                <div class="footer-col">
+                    <h4>Интернет-магазин</h4>
+                    <ul>
+                        <li>Акции</li>
+                        <li>Распродажа</li>
+                        <li>Доставка и оплата</li>
+                        <li>Программа лояльности</li>
+                        <li>Подарочные сертификаты</li>
+                        <li>Политика конфиденциальности</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Розничная сеть</h4>
+                    <ul>
+                        <li>Адреса магазинов</li>
+                        <li>Книжный</li>
+                        <li>О компании</li>
+                        <li>Хотите у нас работать?</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Знаем, что почитать</h4>
+                    <ul>
+                        <li>Скоро в продаже</li>
+                        <li>Эксклюзивные новинки</li>
+                        <li>Лучшие из лучших</li>
+                        <li>Косэцу-журнал</li>
+                        <li>Что ещё почитать?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="images/header-logo.png" alt="Логотип" class="logo">
+                    <span class="brand">Косэцу</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const wrapper = document.getElementById('eventsWrapper');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        const totalSlides = dots.length;
+
+        function updateCarousel(index) {
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - 1;
+            currentIndex = index;
+            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                updateCarousel(parseInt(this.getAttribute('data-index')));
+            });
+        });
+
+        updateCarousel(0);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина — Косэцу</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="basket.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="nav-left">
+            <img src="images/logo.png" alt="Логотип Косэцу" class="logo-img">
+            <nav class="nav-links">
+                <a href="#">Акции</a>
+                <a href="#">Распродажа</a>
+                <a href="#">Избранное</a>
+            </nav>
+        </div>
+        <div class="nav-right">
+            <img src="images/user-icon.png" alt="Личный кабинет">
+        <a href="index.html">
+  <img src="images/home-icon.png" alt="Главная">
+</a>
+            <img src="images/cart-icon.png" alt="Корзина">
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <h1>Корзина</h1>
+
+    <!-- Заголовки таблицы -->
+    <div class="table-header">
+        <span>Товар</span>
+        <span>Цена</span>
+        <span>Количество</span>
+        <span>Сумма</span>
+    </div>
+
+    <!-- Товар 1 -->
+    <div class="cart-item" data-price="1200">
+        <div class="product">
+            <img src="images/bluelock.png" alt="Блюлок Том 2">
+            <div class="info">
+                <p class="type">Комиксы/книга</p>
+                <p class="name">"Блюлок" Том 2</p>
+            </div>
+        </div>
+        <div class="price">1200₽</div>
+        <div class="quantity">
+            <button class="minus">-</button>
+            <div class="count">1</div>
+            <button class="plus">+</button>
+            <div class="delete"></div>
+        </div>
+        <div class="sum">1200₽</div>
+    </div>
+
+    <!-- Товар 2 -->
+    <div class="cart-item" data-price="1000">
+        <div class="product">
+            <img src="images/bakuman.png" alt="Бакуман">
+            <div class="info">
+                <p class="type">Комиксы/книга</p>
+                <p class="name">"Бакуман"</p>
+            </div>
+        </div>
+        <div class="price">1000₽</div>
+        <div class="quantity">
+            <button class="minus">-</button>
+            <div class="count">1</div>
+            <button class="plus">+</button>
+            <div class="delete"></div>
+        </div>
+        <div class="sum">1000₽</div>
+    </div>
+
+    <!-- Итоговая сумма -->
+    <div class="total">
+        <h2>Итого: <span class="total-price">2200</span>₽</h2>
+    </div>
+
+    <div class="checkout">
+        <button>Перейти к оформлению</button>
+    </div>
+
+</main>
+
+<!-- Футер -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div><strong>+1 234 56 78 90</strong></div>
+                <div class="footer-link">Вопросы и ответы</div>
+                <div class="footer-link">Почувствовать в интервью ★</div>
+                <div class="social-icons">
+                    <img src="images/telegram.png" alt="Telegram" class="social-icon">
+                    <img src="images/vk.png" alt="ВКонтакте" class="social-icon">
+                </div>
+                <div class="footer-support">Поддержка</div>
+                <div class="footer-copy">© 2026, Косэцу</div>
+            </div>
+            <div class="footer-col">
+                <h4>Интернет-магазин</h4>
+                <ul>
+                    <li>Акции</li>
+                    <li>Распродажа</li>
+                    <li>Доставка и оплата</li>
+                    <li>Программа лояльности</li>
+                    <li>Подарочные сертификаты</li>
+                    <li>Политика конфиденциальности</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Розничная сеть</h4>
+                <ul>
+                    <li>Адреса магазинов</li>
+                    <li>Книжный</li>
+                    <li>О компании</li>
+                    <li>Хотите у нас работать?</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Знаем, что почитать</h4>
+                <ul>
+                    <li>Скоро в продаже</li>
+                    <li>Эксклюзивные новинки</li>
+                    <li>Лучшие из лучших</li>
+                    <li>Косэцу-журнал</li>
+                    <li>Что ещё почитать?</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Логотип" class="logo">
+                <span class="brand">Косэцу</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Функционал корзины (изменение количества, удаление, пересчёт)
+    document.querySelectorAll('.cart-item').forEach(item => {
+        const minusBtn = item.querySelector('.minus');
+        const plusBtn = item.querySelector('.plus');
+        const countDiv = item.querySelector('.count');
+        const priceSpan = item.querySelector('.price');
+        const sumSpan = item.querySelector('.sum');
+        const deleteBtn = item.querySelector('.delete');
+
+        let price = parseFloat(item.dataset.price);
+        let count = parseInt(countDiv.innerText);
+        updateSum();
+
+        function updateSum() {
+            countDiv.innerText = count;
+            const sum = price * count;
+            sumSpan.innerText = sum + '₽';
+            updateTotal();
+        }
+
+        minusBtn.addEventListener('click', () => {
+            if (count > 1) {
+                count--;
+                updateSum();
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            count++;
+            updateSum();
+        });
+
+        deleteBtn.addEventListener('click', () => {
+            item.remove();
+            updateTotal();
+        });
+
+        function updateTotal() {
+            let total = 0;
+            document.querySelectorAll('.cart-item').forEach(i => {
+                const s = i.querySelector('.sum');
+                if (s) {
+                    total += parseInt(s.innerText.replace('₽', ''));
+                }
+            });
+            document.querySelector('.total-price').innerText = total;
+        }
+    });
+</script>
+
+</body>
+</html>
